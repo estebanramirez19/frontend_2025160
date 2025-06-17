@@ -275,11 +275,12 @@ body {
 
 
 /* /* ====================
-   ESTILOS DE LA BARRA DE NAVEGACIÓN
+BARRA DE NAVEGACIÓN REDONDA
 
 /* Contenedor principal de la barra de navegación */
 .navbar_circle {
     background-color: #ffffff;
+    margin: 1rem 1rem;
     padding: 10px 0;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -331,7 +332,7 @@ body {
     width: 8rem; /* Ancho de la imagen */
     height: 8rem; /* Alto de la imagen */
     border-radius: 50%; /* Hace la imagen completamente redonda */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    object-fit: contain ; /* Asegura que la imagen cubra el área sin distorsionarse */
     border: 3px solid #ddd; /* Borde alrededor de la imagen */
     transition: border-color 0.2s ease; /* Suaviza el cambio de color del borde */
 }
