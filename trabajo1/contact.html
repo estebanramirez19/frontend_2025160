@@ -103,7 +103,50 @@
         
             <!-- formulario de contacto, mapa de ubicacion de la empresa, condiciones -->
         <main>
-   
+            <section class="container my-5">
+                <div class="row">
+                    <!-- Formulario de contacto -->
+                    <div class="col-md-6">
+                        <h2>Contáctanos</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label">Asunto</label>
+                                <input type="text" class="form-control" id="asunto" placeholder="Motivo del contacto" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Enviar mensaje</button>
+                        </form>
+                    </div>
+
+                    <!-- Mapa editable -->
+                    <div class="col-md-6">
+                        <h2>Ubicación</h2>
+                        <p>Haz clic en el mapa para cambiar la ubicación:</p>
+                        <iframe
+                            id="mapa"
+                            src="https://www.google.com/maps?q=-33.4489,-70.6693&z=15&output=embed"
+                            width="100%"
+                            height="400"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
         </main>
 
         <!-- footer -->

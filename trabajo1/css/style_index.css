@@ -328,10 +328,10 @@ body {
 
 /* Estilo para las imágenes de perfil */
 .profile-pic {
-    width: 8em; /* Ancho de la imagen */
-    height: 8em; /* Alto de la imagen */
+    width: 8rem; /* Ancho de la imagen */
+    height: 8rem; /* Alto de la imagen */
     border-radius: 50%; /* Hace la imagen completamente redonda */
-    object-fit:scale-down; /* Asegura que la imagen cubra el área sin distorsionarse */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
     border: 3px solid #ddd; /* Borde alrededor de la imagen */
     transition: border-color 0.2s ease; /* Suaviza el cambio de color del borde */
 }
