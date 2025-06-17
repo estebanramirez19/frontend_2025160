@@ -42,7 +42,7 @@ body {
 }
 
 .nav-link:hover {
-    outline: 10px solid orange;
+   /* Cambia el color al pasar el ratón */
 }
 
 #nav_2 {
@@ -66,9 +66,20 @@ body {
 /* ====================
    TARJETAS DE PRODUCTOS
 ==================== */
-
+/* Estilos para la clase 'card' (el componente base de la tarjeta) */
 .card {
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/*  (maneja el color de fondo y texto de las tarjetas) */
+.text-bg-light {
+    background-color: #f8f9fa; /* Color de fondo muy claro */
+    color: #212529; /* Color de texto oscuro */
+}
+
+/* (margen inferior de las tarjetas) */
+.mb-3 {
+    margin-bottom: 1rem; /* 16px por defecto si 1rem=16px */
 }
 
 .grand_card {

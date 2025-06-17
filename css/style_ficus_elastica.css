@@ -17,6 +17,12 @@ h2 {
     margin-bottom: 15px;
 }
 
+.nombre{
+    font-size: 3em;
+}
+
+
+
 /* ====================
    HEADER - NAVBARS
 ==================== */
@@ -48,7 +54,7 @@ h2 {
 }
 
 .nav-link:hover {
-    outline: 10px solid orange;
+    color: green; 
 }
 
 #nav_2 {
