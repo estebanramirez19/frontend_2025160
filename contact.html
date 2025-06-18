@@ -87,18 +87,40 @@
 
 
                 <!-- segunda barra de navegacion -->
-                <nav id="nav_2">  
-                        <a class="nav-link" href="#">Inicio</a>
-                    
-                        <a class="nav-link" href="#">Plantas</a>
-                
-                        <a class="nav-link" href="#">Maceteros</a>
-                    
-                        <a class="nav-link" href="#">Repisas</a>
-                
-                        <a class="nav-link" href="#">Ofertas</a>
+                <nav id="nav_2" class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú Principal</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#"><strong>Inicio</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><strong>Plantas</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><strong>Maceteros</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><strong>Repisas</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><strong>Ofertas</strong></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
                 </nav>
+
             </div>
         </header>
         
@@ -154,22 +176,20 @@
        <footer class="main-footer">
             <div class="footer-content">
                 <div class="footer-section about">
-                    <h3>Sobre Nosotros</h3>
-                    <p>Somos una empresa dedicada a la venta de plantas. Preocupandonos de que puedas encontrar aquella planta que querias robar.</p>
+                    <h3 class="titulos">Sobre Nosotros</h3>
+                    <p>Green Shop es una empresa chilena dedicada a la venta de 
+                        plantas, maceteros y artículos de jardinería. Nos enfocamos
+                         en acercar la naturaleza a los hogares, ofreciendo una 
+                         amplia variedad de productos de alta calidad, sostenibles
+                          y accesibles para todos..</p>
                     <div class="contact">
                         <span><i class="fas fa-phone"></i> +56 9 1234 5678</span>
                         <span><i class="fas fa-envelope"></i> info@greenshop.cl</span>
                 </div>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
             </div>
 
                 <div class="footer-section links">
-                    <h3>Enlaces Rápidos</h3>
+                    <h3 class="titulos">Enlaces Rápidos</h3>
                     <ul>
                         <li><a href="#">Inicio</a></li>
                         <li><a href="#">Servicios</a></li>
@@ -180,22 +200,27 @@
                 </div>
 
                 <div class="footer-section contact-form">
-                    <h3>Contáctanos</h3>
+                    <h3 class="titulos">Contáctanos</h3>
                     <form action="#" method="post">
-                        <input type="email" name="email" class="text-input contact-input" placeholder="Tu email...">
-                        <textarea name="message" class="text-input contact-input" placeholder="Tu mensaje..."></textarea>
-                        <button type="submit" class="btn-submit">Enviar</button>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
+                            </div>
+                            <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Escriba su motivo</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>   
                     </form>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                &copy; 2025 Green Shop Todos los derechos reservados.
+                &copy; 2020 Green Shop Todos los derechos reservados.
             </div>
 
 
         </footer>
-
         <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

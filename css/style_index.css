@@ -3,16 +3,31 @@
 ==================== */
 
 body {
-    background: #FFFFFF;
-    font-family: Garamond, serif;
+    background: #f7f9f7; /* Blanco muy suave, casi verde claro para base limpia */
+    font-family: 'Garamond', serif;
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+h2 {
+    color: #2c5f2d; /* Verde oscuro que complementa la marca 'Green Shop' */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+h3 { /* Nuevo: Estilo general para h3 */
+    color: #4a6d4a; /* Un verde medio para los títulos de las tarjetas */
+}
+
+.nombre { /* Esto parece ser el nombre "Green Shop" en el HTML */
+    font-size: 3em;
+    color: #2c5f2d; /* Verde oscuro para el título principal/nombre */
+}
+
 /* ====================
-   NAVBAR PRINCIPAL
+   HEADER - NAVBARS
 ==================== */
 
 .navbar {
@@ -21,13 +36,15 @@ body {
 }
 
 #nav_1 {
-    background-color: #F6F8FA;
+    background-color: #e8f5e9; /* Un verde menta muy suave para la barra superior */
+    border-bottom: 1px solid #d4e7d4; /* Un borde sutil para separación */
 }
 
 .navbar-brand {
     text-align: left;
     font-size: 1.5em;
-    color: #000000;
+    color: #2c5f2d; /* Color verde oscuro para el nombre de la marca */
+    font-weight: bold;
 }
 
 #logo_nav img {
@@ -36,20 +53,41 @@ body {
 }
 
 .nav-link {
-    margin: 5em;
+    margin: 2em 0; 
+    padding: 0 5.3em;
     display: inline;
     text-align: center;
+    color: black;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-   /* Cambia el color al pasar el ratón */
+    color: #ffffff;
+    text-decoration: none; 
+}
+.nav-item{
+    padding: 0.5em 3em; /* Espaciado */
 }
 
 #nav_2 {
-    background-color: #888888;
+    background-color: #689f38; /* Un verde oliva más vibrante para la segunda barra */
     padding: 0.5em 5em;
     width: 100%;
     margin: 0 auto 8px auto;
+    color: black; /* Texto blanco para contraste */
+}
+
+@media (min-width: 992px) { /* breakpoint 'lg' de Bootstrap */
+    #nav_2 .navbar-nav .nav-item .nav-link {
+        color: clack; /* Blanco para los enlaces en la barra de desktop */
+        margin: 0 1.5em; /* Espaciado original en desktop */
+        padding: 0; /* Quita el padding del nav-link dentro del offcanvas */
+    }
+
+    #nav_2 .navbar-nav .nav-item .nav-link:hover {
+        color: #c8e6c9; /* Verde muy claro al pasar el ratón en desktop */
+        background-color: transparent; /* Asegura que no tenga fondo al pasar el ratón */
+    }
 }
 
 /* ====================
@@ -61,76 +99,229 @@ body {
     height: 100%;
     object-fit: cover;
     margin-bottom: 1em;
+    border-radius: 8px; /* Un poco de redondeo para las imágenes del carrusel */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra suave */
 }
 
 /* ====================
-   TARJETAS DE PRODUCTOS
+   TARJETAS DE PRODUCTOS (Estilos adaptados para la nueva estructura)
 ==================== */
-/* Estilos para la clase 'card' (el componente base de la tarjeta) */
-.card {
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-/*  (maneja el color de fondo y texto de las tarjetas) */
-.text-bg-light {
-    background-color: #f8f9fa; /* Color de fondo muy claro */
-    color: #212529; /* Color de texto oscuro */
+
+.products-section {
+    padding: 30px 0; /* Espaciado para la sección completa */
 }
 
-/* (margen inferior de las tarjetas) */
-.mb-3 {
-    margin-bottom: 1rem; /* 16px por defecto si 1rem=16px */
+.main-card.category-card {
+    width: 98%; /* Mantenemos el ancho para la tarjeta principal de categoría */
+    max-width: 1200px; /* Limita el ancho en pantallas grandes */
+    margin: 0 auto 40px auto; /* Centra y añade margen inferior */
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Sombra más pronunciada para la tarjeta grande */
+    border-radius: 12px; /* Más redondeo */
+    border: 1px solid #c8e6c9; /* Borde suave */
 }
 
-.grand_card {
-    width: 99%;
-    height: auto;
+.main-card.category-card .card-header {
+    background-color: #4a7d4a; /* Verde oscuro para el encabezado de la tarjeta principal */
+    color: #ffffff; /* Texto blanco */
+    padding: 18px 25px; /* Más padding */
+    border-bottom: 2px solid #2c5f2d; /* Borde más fuerte */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
-.tarjeta1{
-    width: 49.5%;
-    height: 613.48px;
-    max-height: 50em;
-    object-fit: cover;
+.main-card.category-card .card-header h2 {
+    color: #ffffff; /* Asegura el blanco para el título h2 */
+    margin-bottom: 0; /* Quita el margen inferior predeterminado de h2 */
+    font-size: 2em; /* Tamaño de fuente para el título de la categoría */
 }
 
+.main-card.category-card .card-body.product-grid {
+    padding: 25px; /* Padding para el cuerpo de la tarjeta principal */
+    display: grid; /* Usamos Grid para la disposición de productos */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 25px; /* Espacio entre las tarjetas de producto */
+    justify-content: center; /* Centra las tarjetas si no llenan todo el espacio */
+}
 
-.card-header {
-    background-color: #767f79;
-   
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #d4e7d4; /* Borde sutil verde claro para las tarjetas */
+    border-radius: 10px; /* Redondeo de las esquinas de la tarjeta */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    overflow: hidden; /* Asegura que el contenido respete el border-radius */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transiciones para el hover */
+    display: flex; /* Para organizar el header, imagen y body verticalmente */
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el ratón */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.product-card .card-header {
+    background-color: #a5d6a7; /* Un verde claro para el encabezado de la tarjeta */
+    color: #2c5f2d; /* Texto en verde oscuro para el encabezado */
+    font-weight: bold;
     text-align: center;
+    padding: 12px 15px; /* Padding para el header de la tarjeta pequeña */
+    border-bottom: 1px solid #689f38; /* Borde inferior para separar */
+    border-top-left-radius: 9px; /* Ajusta a 9px para que sea ligeramente menos que la tarjeta */
+    border-top-right-radius: 9px;
 }
 
-.card .text-bg-light .mb-3{
-    width: 95%;
-    height: auto;
+.product-card .card-header h3 {
+    margin-bottom: 0; /* Quita el margen inferior predeterminado de h3 */
+    font-size: 1.25em; /* Tamaño de fuente para el título del producto */
+}
+
+.product-card .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido de la tarjeta */
+    flex-grow: 1; /* Permite que el cuerpo ocupe el espacio restante */
 }
 
 .img_card {
     width: 100%;
+    max-width: 250px; /* Limita el tamaño máximo de la imagen para que no sea muy grande */
     height: auto;
-    max-height: 24em;
-    min-height: 24em;
-    object-fit: scale-down;
+    max-height: 200px; /* Altura máxima de la imagen */
+    object-fit: contain; /* Asegura que la imagen se vea completa dentro del espacio */
     display: block;
-    margin: auto;    
+    margin: 0 auto 15px auto; /* Centra y añade margen inferior */
+    padding: 5px; /* Ligero padding alrededor de la imagen */
+    background-color: #fcfcfc; /* Fondo casi blanco para la imagen */
+    border-radius: 5px; /* Pequeño redondeo */
 }
 
+.product-price { /* Anteriormente h5.card-title o h3.text-success */
+    font-size: 1.6em; /* Precio más grande y prominente */
+    color: #388e3c; /* Verde musgo oscuro para el precio */
+    font-weight: bold;
+    margin-bottom: 8px; /* Espacio debajo del precio */
+    text-align: center;
+}
+
+.product-info { /* Anteriormente p.card-text */
+    font-size: 0.95em; /* Información de envío/cuotas */
+    color: #5a8d5a; /* Un verde medio para el texto informativo */
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.btn-buy { /* Nuevo: Estilo para los botones de compra */
+    background-color: #689f38; /* Verde vibrante para el botón de comprar */
+    color: #fff;
+    border: none;
+    padding: 12px 25px; /* Más padding para el botón */
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px; /* Más redondeo */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Asegura que no tenga subrayado */
+    display: inline-block; /* Para que el padding funcione bien y ocupe el espacio */
+    margin-top: 15px; /* Margen superior para separarlo del texto */
+}
+
+.btn-buy:hover {
+    background-color: #8bc34a; /* Un verde más claro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeña elevación al hacer hover */
+}
+
+/* Antiguas clases de tarjeta que ya no son necesarias o se han reemplazado */
+/* .card, .text-bg-light, .mb-3, .grand_card, .tarjeta1, .card .text-bg-light .mb-3 */
+/* Estos selectores se han reemplazado por las nuevas clases como .main-card, .product-card, etc. */
+
+
+/* ====================
+   TARJETAS DE PRODUCTOS HORIZONTAL (#nav_3)
+==================== */
+/* Re-estilizado para ser más consistente */
 #nav_3 {
     display: flex;
     overflow-x: auto;
     padding-bottom: 15px;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    background-color: #f0f5f0; /* Fondo ligero para la barra de tarjetas horizontales */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px; /* Espacio debajo de la nav de tarjetas */
 }
 
 #nav_3::-webkit-scrollbar {
     display: none;
 }
 
-#nav_3 .card {
+#nav_3 .card { /* Mantengo este selector pero ahora apuntará a .card genéricas dentro de #nav_3 */
     flex-shrink: 0;
     margin-right: 1rem;
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #d4e7d4; /* Borde sutil */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra más suave */
+    max-width: 18rem; /* Mantenemos el ancho máximo original */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#nav_3 .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#nav_3 .card .card-header {
+    background-color: #c8e6c9; /* Verde muy claro para header de tarjetas horizontales */
+    color: #2c5f2d;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #a5d6a7;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+#nav_3 .card .card-body {
+    padding: 15px;
+    text-align: center; /* Centrar el contenido de la tarjeta */
+}
+
+#nav_3 .card .img_card {
+    max-height: 150px; /* Ajusta la altura de las imágenes en estas tarjetas */
+    min-height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+#nav_3 .card .card-title { /* Para el precio en estas tarjetas */
+    font-size: 1.4em;
+    color: #388e3c;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#nav_3 .card .card-text { /* Para la info en estas tarjetas */
+    font-size: 0.85em;
+    color: #5a8d5a;
+    margin-bottom: 3px;
+}
+
+#nav_3 .card .btn-success { /* Botón de Bootstrap para añadir al carrito */
+    background-color: #689f38;
+    border-color: #4a7d4a;
+    font-size: 0.9em; /* Más pequeño para estas tarjetas */
+    padding: 8px 15px;
+    margin-top: 10px !important; /* Sobrescribir margin-top de Bootstrap */
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+#nav_3 .card .btn-success:hover {
+    background-color: #8bc34a;
+    border-color: #689f38;
 }
 
 #nav_3 .card.mb-3 {
@@ -138,12 +329,86 @@ body {
 }
 
 /* ====================
+BARRA DE NAVEGACIÓN REDONDA
+==================== */
+
+/* Contenedor principal de la barra de navegación */
+.navbar_circle {
+    background-color: #ffffff;
+    margin: 1rem auto; /* Centrar la barra y dar margen */
+    padding: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 99%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.navbar_circle::-webkit-scrollbar {
+    display: none;
+}
+
+/* Lista de elementos de la navegación */
+.navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 15px;
+    display: flex;
+    gap: 25px;
+}
+
+/* Elementos individuales de la navegación */
+.navbar-item {
+    display: inline-block;
+}
+
+/* Enlaces dentro de la navegación */
+.navbar-link {
+    text-decoration: none; /* Quitar subrayado */
+    color: #4a6d4a; /* Color de texto que concuerda con la paleta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navbar-link:hover {
+    color: #689f38; /* Color de hover que concuerda con la paleta */
+    transform: translateY(-3px);
+}
+
+/* Estilo para las imágenes de perfil */
+.profile-pic {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 3px solid #a5d6a7; /* Borde verde claro */
+    transition: border-color 0.2s ease;
+}
+
+.navbar-link:hover .profile-pic {
+    border-color: #689f38; /* Borde verde vibrante al pasar el ratón */
+}
+
+/* Estilo para el texto debajo de las imágenes */
+.navbar-link span {
+    margin-top: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* ====================
    FOOTER GENERAL
 ==================== */
 
 .main-footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: #388e3c; /* Un verde musgo oscuro y robusto para el pie de página */
+    color: #e0e0e0; /* Gris muy claro para el texto, buen contraste */
     padding: 40px 0;
     font-size: 0.9em;
     flex-shrink: 0;
@@ -165,13 +430,15 @@ body {
 }
 
 .footer-section h3 {
-    color: #3498db;
+    color: #ffffff; /* Blanco puro para los títulos de sección del footer */
     margin-bottom: 20px;
-    font-size: 1.2em;
+    font-size: 1.8em;
+    font-weight: bold;
 }
 
 .footer-section p {
     line-height: 1.8;
+    color: #cfcfcf; /* Un gris ligeramente más oscuro para los párrafos */
 }
 
 .footer-section .contact span {
@@ -181,18 +448,19 @@ body {
 
 .footer-section .contact i {
     margin-right: 10px;
-    color: #3498db;
+    color: #a5d6a7; /* Un verde claro para los iconos de contacto */
 }
 
 .footer-section .socials a {
-    color: #ecf0f1;
+    color: #ffffff; /* Iconos sociales en blanco */
     font-size: 1.5em;
     margin-right: 15px;
     transition: color 0.3s ease;
+    text-decoration: none; /* Quitar subrayado */
 }
 
 .footer-section .socials a:hover {
-    color: #3498db;
+    color: #c8e6c9; /* Verde muy claro al pasar el ratón por los iconos sociales */
 }
 
 .footer-section.links ul {
@@ -205,28 +473,28 @@ body {
 }
 
 .footer-section.links ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
+    color: #e0e0e0; /* Enlaces del footer en gris claro */
+    text-decoration: none; /* Quitar subrayado */
     transition: color 0.3s ease;
 }
 
 .footer-section.links ul li a:hover {
-    color: #3498db;
+    color: #a5d6a7; /* Verde claro al pasar el ratón */
 }
 
 .footer-section .contact-form .text-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: none;
-    background-color: #34495e;
-    color: #ecf0f1;
+    border: 1px solid #5a8e5a; /* Borde sutil del color del footer */
+    background-color: #4a7d4a; /* Fondo del input un poco más claro que el footer */
+    color: #ffffff;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 .footer-section .contact-form .text-input::placeholder {
-    color: #bdc3c7;
+    color: #c0d8c0; /* Placeholder en un verde muy claro */
 }
 
 .footer-section .contact-form textarea {
@@ -235,7 +503,7 @@ body {
 }
 
 .footer-section .contact-form .btn-submit {
-    background-color: #3498db;
+    background-color: #689f38; /* Verde vibrante para el botón de submit */
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -245,12 +513,12 @@ body {
 }
 
 .footer-section .contact-form .btn-submit:hover {
-    background-color: #2980b9;
+    background-color: #8bc34a; /* Un verde más claro al pasar el ratón por el botón */
 }
 
 .footer-bottom {
-    background-color: #22313f;
-    color: #bdc3c7;
+    background-color: #2e4d2e; /* Un verde aún más oscuro para el pie de página inferior */
+    color: #c2c2c2;
     text-align: center;
     padding: 15px 0;
     margin-top: 30px;
@@ -281,80 +549,25 @@ body {
     .footer-section.links ul li {
         margin: 0 10px 10px 10px;
     }
+
+    /* Ajustes para las tarjetas en pantallas pequeñas */
+    .main-card.category-card {
+        width: 95%; /* Un poco más de margen en móviles */
+    }
+
+    .main-card.category-card .card-body.product-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+        padding: 15px;
+    }
+
+    .product-card {
+        margin-bottom: 20px; /* Espacio entre tarjetas cuando están en columna */
+    }
 }
 
-
-
-/* /* ====================
-BARRA DE NAVEGACIÓN REDONDA
-
-/* Contenedor principal de la barra de navegación */
-.navbar_circle {
-    background-color: #ffffff;
-    margin: 1rem 1rem;
-    padding: 10px 0;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 99%; /* Limita el ancho de la barra para pantallas grandes */
-    overflow-x: auto; /* Permite el desplazamiento horizontal si el contenido es demasiado ancho */
-    white-space: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
-    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
-    scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
-    -ms-overflow-style: none; /* Oculta la barra de desplazamiento para IE/Edge */
+/* Media Query para pantallas medianas (ej. tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-card.category-card .card-body.product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+    }
 }
-
-/* Oculta la barra de desplazamiento para navegadores basados en Webkit (Chrome, Safari) */
-.navbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Lista de elementos de la navegación */
-.navbar-list {
-    list-style: none; /* Remueve los puntos de la lista */
-    margin: 0;
-    padding: 0 15px; /* Espaciado interno para la lista */
-    display: flex; /* Alinea los elementos en una fila */
-    gap: 25px; /* Espacio entre cada elemento */
-}
-
-/* Elementos individuales de la navegación */
-.navbar-item {
-    display: inline-block; /* Asegura que los elementos se muestren en línea */
-}
-
-/* Enlaces dentro de la navegación */
-.navbar-link {
-    text-decoration: none; /* Remueve el subrayado de los enlaces */
-    color: #333;
-    display: flex;
-    flex-direction: column; /* Coloca la imagen encima del texto */
-    align-items: center; /* Centra la imagen y el texto horizontalmente */
-    padding: 8px 0;
-    transition: transform 0.2s ease, color 0.2s ease; /* Suaviza las transiciones al pasar el ratón */
-}
-
-.navbar-link:hover {
-    color: #007bff; /* Cambia el color del texto al pasar el ratón */
-    transform: translateY(-3px); /* Pequeño efecto de elevación al pasar el ratón */
-}
-
-/* Estilo para las imágenes de perfil */
-.profile-pic {
-    width: 8rem; /* Ancho de la imagen */
-    height: 8rem; /* Alto de la imagen */
-    border-radius: 50%; /* Hace la imagen completamente redonda */
-    object-fit: contain ; /* Asegura que la imagen cubra el área sin distorsionarse */
-    border: 3px solid #ddd; /* Borde alrededor de la imagen */
-    transition: border-color 0.2s ease; /* Suaviza el cambio de color del borde */
-}
-
-.navbar-link:hover .profile-pic {
-    border-color: #007bff; /* Cambia el color del borde al pasar el ratón */
-}
-
-/* Estilo para el texto debajo de las imágenes */
-.navbar-link span {
-    margin-top: 8px; /* Espacio entre la imagen y el texto */
-    font-size: 0.9em;
-    font-weight: 600;
-} 
