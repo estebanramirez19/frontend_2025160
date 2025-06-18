@@ -1,5 +1,5 @@
 /* ====================
-    ESTILOS GENERALES
+   ESTILOS GENERALES
 ==================== */
 
 body {
@@ -12,15 +12,23 @@ body {
 }
 
 h2 {
-    color: #2c5f2d; /* Verde oscuro que complementa la marca 'Green Shop' */
+    color: black; 
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.nombre {
-    font-size: 3em;
-    color: black; /*título principal/nombre */
+h3 { /
+    color: black;
 }
+
+.nombre { 
+    font-size: 3em;
+    color: #388e3c; /* título principal/nombre */
+}
+
+/* ====================
+   HEADER - NAVBARS
+==================== */
 
 .navbar {
     width: 100%;
@@ -35,7 +43,7 @@ h2 {
 .navbar-brand {
     text-align: left;
     font-size: 1.5em;
-    color: #2c5f2d; /* Color verde oscuro para el nombre de la marca */
+    color: black; /* Color verde oscuro para el nombre de la marca */
     font-weight: bold;
 }
 
@@ -62,12 +70,26 @@ h2 {
 }
 
 #nav_2 {
-    background-color: #689f38; /* Un verde oliva más vibrante para la segunda barra */
+    background-color: #388e3c ; 
     padding: 0.5em 5em;
     width: 100%;
     margin: 0 auto 8px auto;
-    color: black; /* Texto blanco para contraste */
+    color: white; /* Texto blanco para contraste */
 }
+
+@media (min-width: 992px) { /* breakpoint 'lg' de Bootstrap */
+    #nav_2 .navbar-nav .nav-item .nav-link {
+        color: #ffffff; /* Blanco para los enlaces en la barra de desktop */
+        margin: 0 1.5em; /* Espaciado original en desktop */
+        padding: 0; /* Quita el padding del nav-link dentro del offcanvas */
+    }
+
+    #nav_2 .navbar-nav .nav-item .nav-link:hover {
+        color: #c8e6c9; /* Verde muy claro al pasar el ratón en desktop */
+        background-color: transparent; /* Asegura que no tenga fondo al pasar el ratón */
+    }
+}
+
 /* ====================
     MAIN - CONTENIDO PRINCIPAL (SOBRE NOSOTROS, DETALLES DE PRODUCTO, etc.)
 ==================== */
